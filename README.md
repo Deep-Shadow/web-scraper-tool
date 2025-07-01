@@ -38,7 +38,7 @@ A **Web Scraper Tool** é uma ferramenta robusta e flexível desenvolvida em Typ
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/web-scraper-tool.git
+   git clone git@github.com:Deep-Shadow/web-scraper-tool.git
    cd web-scraper-tool
    ```
 
@@ -433,8 +433,8 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 ## 📞 Suporte
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/seu-usuario/web-scraper-tool/issues)
-- 💬 **Discussões**: [GitHub Discussions](https://github.com/seu-usuario/web-scraper-tool/discussions)
+- 🐛 **Issues**: [GitHub Issues](git@github.com:Deep-Shadow/web-scraper-tool/issues)
+- 💬 **Discussões**: [GitHub Discussions](git@github.com:Deep-Shadow/web-scraper-tool/discussions)
 
 ---
 
