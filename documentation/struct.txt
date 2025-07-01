@@ -1,0 +1,269 @@
+🏗️ Estrutura do Projeto web-scraper-tool Detalhada
+
+web-scraper-tool/
+├── 📚 documentation/
+│   └── 📄 DOCUMENTATION.md
+│   └── 📄 structure.txt
+│
+├── 📦 node_modules/
+│   └── (Módulos instalados pelo npm)
+│
+├── 📊 database/
+│   ├── 📱 devices.json
+│   └── 🌐 proxies.json
+│
+├── 💡 examples/
+│   ├── 🔰 basic/
+│   │   ├── 📄 single-request.ts
+│   │   ├── 📄 single-request-with-proxy.ts
+│   │   └── 📄 single-request-with-random-proxies.ts
+│   └── 🚀 advanced/
+│       ├── 📄 multiple-requests.ts
+│       ├── 📄 multiple-requests-with-proxy.ts
+│       ├── 📄 multiple-requests-with-random-proxies.ts
+│       └── 📄 parallel-requests.ts
+│
+├── 💻 src/
+│   ├── ⚙️ config.ts
+│   ├── 📄 index.ts
+│   ├── 📜 interfaces/
+│   │   ├── ⚙️ IConfig.ts
+│   │   ├── 📄 IProxy.ts
+│   │   └── 📝 IScraperOptions.ts
+│   ├── 🛠️ services/
+│   │   ├── 📡 Proxy.ts
+│   │   └── 🔗 Request.ts
+│   ├── 📝 types/
+│   │   └── 🏷️ index.d.ts
+│   └── 🧰 utils/
+│       ├── ✍️ DataFormatter.ts
+│       ├── 🔒 Security.ts
+│       ├── ⏳ Delay.ts
+│       └── 📢 Logger.ts
+│
+├── 📄 package.json
+├── 🔒 package-lock.json
+├── 📖 README.md
+└── 📝 tsconfig.json
+
+Explicação Detalhada de Pastas e Arquivos:
+web-scraper-tool/ (Raiz do Projeto)
+Esta é a pasta principal da ferramenta de web scraping. Ela contém todos os arquivos e diretórios essenciais para o desenvolvimento, execução e documentação do projeto. É o ponto de entrada para o sistema.
+
+📚 documentation/ (Pasta)
+Propósito: Contém toda a documentação do projeto, servindo como um guia completo para usuários e desenvolvedores.
+
+Por que usar: Essencial para a manutenibilidade e usabilidade da ferramenta. Garante que qualquer pessoa possa entender como configurar, usar e contribuir para o projeto sem precisar analisar o código fonte extensivamente.
+
+Como usar: Adicione aqui guias de início rápido, exemplos de uso avançado e uma referência completa da API.
+
+🚀 GETTING_STARTED.md:
+
+Propósito: Guia passo a passo para configurar e executar a ferramenta pela primeira vez.
+
+Uso: Deve incluir instruções sobre instalação de dependências, configuração inicial e um exemplo básico de como iniciar um scrape.
+
+📖 ADVANCED_USAGE.md:
+
+Propósito: Demonstra exemplos mais complexos da ferramenta, como raspagem em lote, uso de proxies avançados e configurações personalizadas.
+
+Uso: Ajuda os usuários a explorar todo o potencial da ferramenta além do básico.
+
+📘 API_REFERENCE.md:
+
+Propósito: Documentação detalhada de todas as classes, métodos, interfaces e tipos públicos da ferramenta.
+
+Uso: Serve como um manual para desenvolvedores que desejam integrar ou estender a ferramenta.
+
+📦 node_modules/ (Pasta)
+Propósito: Armazena todas as dependências (bibliotecas de terceiros) que seu projeto utiliza, instaladas via npm ou Yarn.
+
+Por que usar: O Node.js e o TypeScript dependem de módulos externos para a maioria das funcionalidades. Esta pasta é gerenciada automaticamente pelo gerenciador de pacotes (npm install).
+
+Como usar: Você não interage diretamente com esta pasta. As dependências são declaradas no package.json e instaladas automaticamente.
+
+📊 database/ (Pasta)
+Propósito: Guarda arquivos JSON com dados de configuração e recursos que a ferramenta utiliza, como listas de agentes de usuário (user-agents) ou proxies.
+
+Por que usar: Centraliza dados importantes que podem ser facilmente atualizados ou configurados sem alterar o código-fonte principal.
+
+Como usar: Os serviços da aplicação leem e utilizam esses arquivos para configurar o comportamento do scraper.
+
+📱 devices.json:
+
+Propósito: Lista de User-Agents e viewports para simular diferentes tipos de dispositivos (desktop, mobile, tablet) durante as requisições.
+
+Uso: Usado pela ferramenta para randomizar ou especificar o agente de usuário, imitando o acesso de navegadores reais e evitando detecção.
+
+🌐 proxies.json:
+
+Propósito: Armazenar uma lista de servidores proxy que podem ser usados para rotear as requisições de scraping.
+
+Uso: O Proxy pode ler este arquivo para carregar proxies estáticos, além de buscar de APIs externas. Crucial para evitar bloqueios por IP.
+
+💡 examples/ (Pasta)
+Propósito: Contém exemplos de código que demonstram como usar a ferramenta em diferentes cenários, desde o básico até o mais avançado.
+
+Por que usar: Facilita o aprendizado e a compreensão da API da ferramenta, permitindo que os usuários vejam o código em ação.
+
+Como usar: Os exemplos são arquivos TypeScript que podem ser compilados e executados para ilustrar funcionalidades específicas.
+
+🔰 basic/ (Subpasta):
+
+Propósito: Exemplos de uso fundamental da ferramenta.
+
+Uso: Mostra como realizar as tarefas mais simples, servindo como ponto de partida.
+
+📄 single-request.ts: Exemplo de uma única requisição HTTP sem proxies.
+
+📄 single-request-with-proxy.ts: Exemplo de uma única requisição usando um proxy específico.
+
+📄 single-request-with-random-proxies.ts: Exemplo de uma única requisição utilizando proxies aleatórios da lista disponível.
+
+🚀 advanced/ (Subpasta):
+
+Propósito: Exemplos que demonstram funcionalidades mais complexas e poderosas.
+
+Uso: Inspira e guia os usuários para cenários de uso mais sofisticados.
+
+📄 multiple-requests.ts: Exemplo de como realizar várias requisições consecutivas.
+
+📄 multiple-requests-with-proxy.ts: Exemplo de múltiplas requisições usando um proxy específico.
+
+📄 multiple-requests-with-random-proxies.ts: Exemplo de múltiplas requisições com rotação de proxies aleatórios.
+
+📄 parallel-requests.ts: Exemplo de como fazer requisições simultâneas para otimizar o tempo de execução.
+
+💻 src/ (Pasta)
+Propósito: Contém o código-fonte principal da sua ferramenta, escrito em TypeScript.
+
+Por que usar: É onde a lógica de negócio e as funcionalidades do scraper são implementadas e organizadas. A separação do restante dos arquivos (configurações, exemplos) mantém o projeto limpo.
+
+Como usar: Todos os módulos são importados e exportados entre si para construir a funcionalidade completa da ferramenta.
+
+⚙️ config.ts:
+
+Propósito: Define as configurações globais da ferramenta, como diretório de saída, timeouts, limites de retentativa e comportamento de proxies.
+
+Uso: As configurações são importadas e usadas por diferentes serviços e utilitários para padronizar o comportamento. Pode ser sobrescrito por opções específicas de scrape.
+
+🎯 index.ts:
+
+Propósito: O ponto de entrada principal da sua biblioteca/ferramenta (a classe WebScraper). Ele orquestra as chamadas para os serviços e utilitários para realizar as operações de scraping.
+
+Uso: Exporta a classe WebScraper que é a interface principal para os usuários da ferramenta. Contém a lógica para scrape uma URL e batchScrape várias URLs.
+
+📜 interfaces/ (Pasta):
+
+Propósito: Define as interfaces TypeScript (contratos) para objetos de dados e configurações. Garante tipagem forte e clareza sobre a estrutura dos dados.
+
+Por que usar: Interfaces são cruciais para a confiabilidade do código TypeScript. Elas ajudam a prevenir erros de tipo em tempo de desenvolvimento e melhoram a legibilidade.
+
+Como usar: Outros módulos importam essas interfaces para garantir que os dados sigam uma estrutura definida.
+
+🔧 IConfig.ts: Interface que define a estrutura do objeto de configuração global.
+
+👤 IProxy.ts: Interface que define a estrutura de um objeto proxy, incluindo host, porta, protocolo e credenciais.
+
+📝 IScraperOptions.ts: Interface que define as opções que podem ser passadas para uma operação de scraping individual.
+
+🛠️ services/ (Pasta):
+
+Propósito: Contém a lógica de negócio e as classes que realizam operações específicas e complexas, como gerenciamento de proxies e requisições HTTP.
+
+Por que usar: A separação de serviços promove a modularidade e a reutilização do código. Cada serviço tem uma responsabilidade clara.
+
+Como usar: As classes dentro desta pasta são instanciadas ou seus métodos estáticos são chamados pelos componentes de alto nível (como index.ts).
+
+📡 Proxy.ts:
+
+Propósito: Gerencia a obtenção, validação e rotação de proxies. Ele pode buscar proxies de uma API externa, cacheá-los e fornecer um proxy aleatório quando solicitado.
+
+Uso: Fornece métodos estáticos como getRandomProxy() e validateProxy() para que outras partes da aplicação possam integrar o uso de proxies facilmente.
+
+🔗 request.ts: (Anteriormente requests.ts, classe RequestService agora Request)
+
+Propósito: Encapsula a lógica para fazer requisições HTTP usando axios, incluindo tratamento de retentativas, atrasos e uso de proxies.
+
+Uso: A classe Request é instanciada para cada operação de scraping, configurando o axios com as opções fornecidas e lidando com a resposta ou erro.
+
+📝 types/ (Pasta):
+
+Propósito: Armazena definições de tipo TypeScript que não são interfaces, mas sim aliases de tipo ou declarações de módulo.
+
+Por que usar: Organiza e centraliza tipos complexos ou específicos do projeto, mantendo o código mais limpo.
+
+Como usar: Exporta tipos que são usados em outras partes da aplicação para garantir a segurança de tipo.
+
+🏷️ index.d.ts:
+
+Propósito: Reexporta interfaces de outras pastas para simplificar importações e inclui declarações de módulo, como para arquivos JSON. Define também tipos de união como OutputFormat e a interface IScraperResult que descreve o resultado de uma operação de scraping.
+
+Uso: Usado globalmente para tipagem.
+
+🧰 utils/ (Pasta):
+
+Propósito: Contém funções e classes utilitárias que fornecem funcionalidades auxiliares e não se encaixam diretamente nos serviços principais.
+
+Por que usar: Evita a duplicação de código e mantém funções genéricas e reutilizáveis em um local centralizado.
+
+Como usar: Métodos estáticos ou funções independentes que são importadas e usadas onde necessário.
+
+✍️ DataFormatter.ts: (Anteriormente DataFormatters.ts)
+
+Propósito: Converte e formata dados brutos em diferentes formatos de saída, como JSON, XML, HTML ou texto puro.
+
+Uso: Fornece um método estático format() que recebe os dados e o formato desejado, retornando a string formatada.
+
+🔒 SecurityUtils.ts:
+
+Propósito: Oferece utilitários relacionados à segurança, como a geração de cabeçalhos HTTP "seguros" (que simulam navegadores) e sanitização de entradas.
+
+Uso: Usado para gerar cabeçalhos para requisições e limpar dados para evitar vulnerabilidades.
+
+⏳ delay.ts:
+
+Propósito: Fornece funções para introduzir atrasos no fluxo de execução, tanto atrasos fixos quanto aleatórios.
+
+Uso: Essencial para web scraping para evitar sobrecarregar servidores e reduzir a chance de ser bloqueado ao simular comportamento humano.
+
+📢 logger.ts:
+
+Propósito: Um utilitário para logs personalizados com diferentes níveis (INFO, SUCCESS, WARN, ERROR, DEBUG) e formatação colorida, além de timestamps.
+
+Uso: Usado em toda a aplicação para registrar eventos, depurar problemas e fornecer feedback ao usuário.
+
+📄 package.json
+Propósito: O manifesto do projeto Node.js. Ele lista metadados sobre o projeto (nome, versão, descrição, autor, licença), scripts de execução (build, test) e todas as dependências (axios).
+
+Por que usar: É essencial para gerenciar as dependências do projeto e definir scripts para automatizar tarefas.
+
+Como usar: npm install (ou yarn install) para instalar as dependências. npm run build para compilar o TypeScript.
+
+🔒 package-lock.json
+Propósito: Registra as versões exatas de todas as dependências (incluindo sub-dependências) instaladas no projeto.
+
+Por que usar: Garante que o projeto seja construído de forma consistente em diferentes ambientes, evitando problemas de compatibilidade causados por versões de dependências.
+
+Como usar: Gerenciado automaticamente pelo npm; você geralmente não edita este arquivo manualmente.
+
+📖 README.md
+Propósito: O ponto de partida para qualquer um que visite seu repositório. Deve fornecer uma visão geral do projeto, como instalá-lo, usá-lo e as principais funcionalidades.
+
+Por que usar: É o primeiro contato de um usuário ou colaborador com seu projeto, essencial para comunicar seu propósito e como ele funciona.
+
+Como usar: Mantenha-o atualizado com as informações mais importantes.
+
+📝 tsconfig.json
+Propósito: O arquivo de configuração do compilador TypeScript. Ele define como o TypeScript deve compilar seu código-fonte (por exemplo, qual versão do JavaScript gerar, onde colocar os arquivos compilados, quais pastas incluir/excluir).
+
+Por que usar: Essencial para projetos TypeScript, pois controla o processo de transpilação e garante que o código seja compilado corretamente.
+
+Como usar: Você o configura uma vez e o compilador TypeScript (tsc) o utiliza automaticamente.
+
+🗑️ struct.txt
+Propósito: Este arquivo foi usado para descrever a estrutura do seu projeto inicialmente.
+
+Por que usar: Útil durante a fase de planejamento ou para comunicar a estrutura.
+
+Como usar: Uma vez que a estrutura física do projeto esteja consolidada e documentada em outros lugares (como este guia ou um ARCHITECTURE.md), este arquivo pode ser removido.
