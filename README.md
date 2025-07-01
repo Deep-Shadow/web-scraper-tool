@@ -1,7 +1,7 @@
 # 🌐 Web Scraper Tool
 
 <div align="center">
-  <img src="./assets/images/web-scraper-logo.png" alt="Web Scraper Tool Logo" width="200" style="border-radius: 5px; margin-bottom: 20px"/>
+  <img src="./assets/images/web-scraper-logo.png" alt="Web Scraper Tool Logo" width="200" style="border-radius: 5px"/>
   
   ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
   ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)
@@ -83,10 +83,9 @@ exemploBasico();
 ```
 web-scraper-tool/
 ├── 📚 documentation/          # Documentação detalhada
-│   └── STRUCTURE.md
+│   └── struct.txt
 ├── 📊 database/              # Bases de dados
 │   ├── devices.json          # Lista de dispositivos/User-Agents
-│   └── proxies.json          # Cache de proxies
 ├── 💡 examples/              # Exemplos de uso
 │   ├── 🔰 basic/            # Exemplos básicos
 │   └── 🚀 advanced/         # Exemplos avançados
@@ -341,21 +340,9 @@ if (result.success) {
 # Compilar TypeScript
 npm run build
 
-# Executar em modo desenvolvimento
-npm run dev
-
 # Executar testes
-npm run test
+npm test
 
-# Verificar tipos TypeScript
-npm run type-check
-
-# Limpar arquivos compilados
-npm run clean
-
-# Executar exemplos
-npm run example:basic
-npm run example:advanced
 ```
 
 ---
