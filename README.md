@@ -1,7 +1,7 @@
 # 🌐 Web Scraper Tool
 
 <div align="center">
-  <img src="./assets/images/web-scraper-logo.png" alt="Web Scraper Tool Logo" width="200" style="border-radius: 5px"/>
+  <img src="./assets/images/web-scraper-logo.png" alt="Web Scraper Tool Logo" width="200" style="border-radius: 5px; margin-bottom: 20px"/>
   
   ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
   ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)
